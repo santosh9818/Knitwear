@@ -1,21 +1,37 @@
 
 <div style="height">
-   <canvas id="mainImage_front" hm-swipe-left="swipecanvas(1, 1)" hm-swipe-right="swipecanvas(1, -1)" class="canvas-width" ng-show="customizeObject.visibleCanvas == 'front'" >
+   <canvas class="layer1" id="mainImage_front" hm-swipe-left="swipecanvas(1, 1)" hm-swipe-right="swipecanvas(1, -1)"  height="450" width="295" ng-show="customizeObject.visibleCanvas == 'front'" >
        
    </canvas> 
-   <canvas id="mainImage_back" hm-swipe-left="swipecanvas(2, 1)" hm-swipe-right="swipecanvas(2, -1)"class="canvas-width" ng-show="customizeObject.visibleCanvas == 'back'">
+   <canvas class="layer1" id="mainImage_back" hm-swipe-left="swipecanvas(2, 1)" hm-swipe-right="swipecanvas(2, -1)" height="450" width="295" ng-show="customizeObject.visibleCanvas == 'back'">
        
    </canvas>  
-   <canvas id="mainImage_sideleft" hm-swipe-left="swipecanvas(3, 1)" hm-swipe-right="swipecanvas(3, -1)"class="canvas-width" ng-show="customizeObject.visibleCanvas == 'sideleft'">
+   <canvas class="layer1" id="mainImage_sideleft" hm-swipe-left="swipecanvas(3, 1)" hm-swipe-right="swipecanvas(3, -1)" height="450" width="295" ng-show="customizeObject.visibleCanvas == 'sideleft'"> 
        
    </canvas>  
-   <canvas id="mainImage_sideright" class="canvas-width" ng-show="customizeObject.visibleCanvas == 'sideright'">
+   <canvas class="layer1" id="mainImage_sideright" hm-swipe-left="swipecanvas(4, 1)" hm-swipe-right="swipecanvas(4, -1)" height="450" width="295" ng-show="customizeObject.visibleCanvas == 'sideright'">
        
-   </canvas>        
-</div>
-</div>
+   </canvas>
+   <canvas class="layer2" id="layer2_pattern" height="450" width="295">
+       
+   </canvas>
+   <canvas class="layer3" id="layer3_color" height="450" width="295">
+       
+   </canvas>
+   <div>
+    <canvas class="layer3" id="layer3_color" height="450" width="295">
+       
+    3</canvas>
 
-<div class="attach-at-buttom">
-    <custom-check-box componenttype="customizeObject.type" componentcontent="customizeObject.data" componentvalue="customizeObject.selectedValue[customizeObject.type]" call="processImage(option)"></custom-check-box>
+   </div>
+   
+</div>
+<!-- componentvalue="customizeObject.selectedValue" 
+ -->
+ <div id="bottom-panel" class=" attach-at-buttom scroll-bottom-panel">
+
+    <custom-check-box style="display: inline-flex" componenttype="{'type': customizeObject.type, 'subType' : customizeObject.subType}" componentvalue="customizeObject.selectedValue" componentcontent="customizeObject.data" call="processImage(option)">
+    </custom-check-box>
+
 
 </div>

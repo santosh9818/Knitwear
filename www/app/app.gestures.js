@@ -1,7 +1,16 @@
 (function(){
     app.config(function ( hammerDefaultOptsProvider ) {
 
-    	hammerDefaultOptsProvider.set({recognizers: [[Hammer.Tap, {time: 300}], [Hammer.Press, {time: 300}], [Hammer.Swipe, {time: 300}]] });
+    	// Event Recognizers
+    	hammerDefaultOptsProvider.set(
+    		{recognizers: [
+
+	    		[Hammer.Tap, {time: 250}], 
+	    		[Hammer.Press, {time: 500}], 
+	    		[Hammer.Swipe, {time: 300}]
+
+    		]}
+    	);
 
     });
 })();

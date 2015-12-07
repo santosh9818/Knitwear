@@ -8,12 +8,12 @@
             scope: { 
                 ctype: "=componenttype",
                 csource: "=componentcontent",
-                cvalue: "=componentvalue",
+                cvalue: "@componentvalue",
                 excute : "&call"
             },
             controller: "CustomCheckboxController",
             link: function (scope, element, attrs) {
-               
+              console.log("in link",scope.cvalue);
             }         
         }
     });

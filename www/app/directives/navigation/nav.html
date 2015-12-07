@@ -1,4 +1,4 @@
-﻿<nav class="navbar navbar-default">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
     
         <span class="middle" ng-init=" navcollapsed=true" ng-click="navCollapsed = !navCollapsed"><a href=""><span class="glyphicon glyphicon-menu-hamburger middle" aria-hidden="true"></a></span>
@@ -15,16 +15,24 @@
 
 
 <div class="col-md-4-panel" id="bs-example-navbar-collapse-4" ng-if="navCollapsed">
-    <div class="panel panel-default">
+    <div class="panel panel-default"> 
         <div collapse="isCollapsed">
-            <div class="panel-body">
-                <div class="card" ng-click="getTabData(tab.tabbedValue, tab.name)" ng-repeat=" tab in subNavigation">          
-                    <div class="card-block text-center">
+            <!-- <div class="panel-body"> -->
+            <div ng-repeat="tab in subNavigation" style="background-color: white;">
+                <div class="card" ng-init="tab.showSubMenu = true">
+                <!-- ng-click="tab.showSubMenu = !tab.showSubMenu" -->          
+                    <div ng-click="getTabData(tab);" class="card-block text-center">
                         <span class="{{tab.icon}}"></span>
                         <p class="card-title">{{tab.name}}</p>
                     </div>
-                </div>
+                    <div ng-show="tab.showSubMenu == true" ng-click="getSubTabData(tab, subMode);" ng-repeat="subMode in tab.subMode" class="card-block text-center">
+                        <span class="{{subMode.icon}}"></span>
+                        <p class="card-title">{{subMode.name}}</p>
+                    </div>
+                </div>               
             </div>
+
+           <!--  </div> -->
         </div>
     </div>
 </div>

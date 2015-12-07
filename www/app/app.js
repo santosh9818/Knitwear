@@ -10,11 +10,7 @@ var app = angular.module('knitwearApp',
         'underscore',
 
         // Touch functionality for mobile phone
-        'angular-gestures',
-
-        //animation
-        
-
+        'angular-gestures'
 	]
 );
 

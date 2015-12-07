@@ -4,7 +4,7 @@
     	</div> 
     </div> -->
     <!-- <div ng-if="ctype!='Color'"> style="background-image:url({{item}})"-->
-    	<div class="inline" ng-class="{'add-border-to-card' : model.isSelected == $index}" hm-tap="changeOptionValue($index, item)"  ng-repeat="item in csource track by $index">
+    	<div class="inline topLayer" ng-class="{'add-border-to-card' : model.isSelected == $index}" hm-tap="changeOptionValue($index, item)"  ng-repeat="item in csource track by $index">
     		<img class="card-image-ratio" src="{{item}}">
 			<input class="alignRight" ng-click="changeOptionValue($index, item)" ng-checked="model.isSelected==$index" type="checkbox"/>
     	</div>

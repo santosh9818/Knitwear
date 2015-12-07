@@ -3,10 +3,15 @@
 	border:2px solid red;
 }
 
+.add-black-border-to-card {
+	border:1px solid black;
+}
+
 .inline {
-	display: inline-block;
+	/*display: inline-block;*/
     height: 72px !important;
 	position: relative;
+	display: inline-flex;
 }
 
 .card-image-ratio {
@@ -26,6 +31,46 @@
 .attach-at-buttom {
 	bottom: 0px; 
     position: absolute;   
+}
+
+.layer1 {
+	z-index: 16;
+	position: absolute;
+}
+
+.layer2 {
+	z-index: 15;
+	position: absolute;
+}
+
+.layer3 {
+	z-index: 14;
+	position: absolute;
+}
+
+.layer4 {
+	z-index: 13;
+	position: absolute;
+}
+
+.layer5 {
+	z-index: 12;
+	position: absolute;
+}
+
+.layer6 {
+	z-index: 11;
+	position: absolute;
+}
+
+.topLayer {
+	z-index: 100;
+}
+
+.scroll-bottom-panel {
+	width: 282px;
+	overflow-x: scroll;
+	overflow-y: hide;
 }
 
 /* Not Confirm */
@@ -67,8 +112,8 @@
 	height: 280px;
 }
 
-.canvas-width {
-	height: 400px;
+/*.canvas-width {
+	height: 600px !important;
 	width: 295px;
 	display:inline-block;
-}
+}*/
