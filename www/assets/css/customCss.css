@@ -1,0 +1,74 @@
+/* Used Css class */
+.add-border-to-card {
+	border:2px solid red;
+}
+
+.inline {
+	display: inline-block;
+    height: 72px !important;
+	position: relative;
+}
+
+.card-image-ratio {
+	width: 69px !important;
+    height: 72px !important;
+}
+
+.alignRight {
+    float: right;
+    padding: 0px !important;
+    margin: 0px !important;
+    position: absolute;
+    top: 0px;	
+    right: 0px;
+}
+
+.attach-at-buttom {
+	bottom: 0px; 
+    position: absolute;   
+}
+
+/* Not Confirm */
+.col-md-4-panel {
+    z-index: 1000;
+    top: 52px;
+    /* right: 20px; */
+    position: absolute;
+    width: 100px;
+}
+
+
+.align-comp-right {
+	float: right;
+}
+.middle {
+	padding: 6px;
+	display: inline-block;
+}
+
+.card {
+	padding: 10px;
+}
+
+
+.customCheckbox {
+	height: 80px;
+	width: 80px;
+}
+
+
+.product-card {
+	width: 180px;
+	height: 300px;
+
+
+.product-card-image {
+	width: 180px;
+	height: 280px;
+}
+
+.canvas-width {
+	height: 400px;
+	width: 295px;
+	display:inline-block;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Knitwear",
+  "version": "0.0.0",
+  "authors": [
+    "Rishabh <rishabh.garg@daffodilsw.com>"
+  ],
+  "description": "Check feasibilty of knitwear.",
+  "main": "index.html",
+  "keywords": [
+    "knitwear"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-gestures": "~0.3.1",
+    "angular-ui-router": "~0.2.15",
+    "oclazyload": "~1.0.9",
+    "underscore": "~1.8.3"
+  },
+  "resolutions": {
+    "angular": ">=1.2.0 <=1.4.0"
+  }
+}

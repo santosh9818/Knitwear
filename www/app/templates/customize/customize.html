@@ -1,0 +1,21 @@
+
+<div style="height">
+   <canvas id="mainImage_front" hm-swipe-left="swipecanvas(1, 1)" hm-swipe-right="swipecanvas(1, -1)" class="canvas-width" ng-show="customizeObject.visibleCanvas == 'front'" >
+       
+   </canvas> 
+   <canvas id="mainImage_back" hm-swipe-left="swipecanvas(2, 1)" hm-swipe-right="swipecanvas(2, -1)"class="canvas-width" ng-show="customizeObject.visibleCanvas == 'back'">
+       
+   </canvas>  
+   <canvas id="mainImage_sideleft" hm-swipe-left="swipecanvas(3, 1)" hm-swipe-right="swipecanvas(3, -1)"class="canvas-width" ng-show="customizeObject.visibleCanvas == 'sideleft'">
+       
+   </canvas>  
+   <canvas id="mainImage_sideright" class="canvas-width" ng-show="customizeObject.visibleCanvas == 'sideright'">
+       
+   </canvas>        
+</div>
+</div>
+
+<div class="attach-at-buttom">
+    <custom-check-box componenttype="customizeObject.type" componentcontent="customizeObject.data" componentvalue="customizeObject.selectedValue[customizeObject.type]" call="processImage(option)"></custom-check-box>
+
+</div>
