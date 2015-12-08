@@ -1,5 +1,5 @@
 
-<div style="height">
+<div style="margin: auto; padding: 5px; width: 295px;">
    <canvas class="layer1" id="mainImage_front" hm-swipe-left="swipecanvas(1, 1)" hm-swipe-right="swipecanvas(1, -1)"  height="450" width="295" ng-show="customizeObject.visibleCanvas == 'front'" >
        
    </canvas> 
@@ -19,19 +19,95 @@
        
    </canvas>
    <div>
-    <canvas class="layer3" id="layer3_color" height="450" width="295">
+    <canvas class="layer4" id="layer4_patch" height="450" width="295" ng-show="customizeObject.visibleCanvas == 'front'">
        
-    3</canvas>
+    </canvas>
+    <canvas class="layer4" id="layer5_patch" height="450" width="295" ng-show="customizeObject.visibleCanvas == 'back'">
+       
+    </canvas>
+     <canvas class="layer4" id="layer6_patch" ng-show="customizeObject.visibleCanvas == 'sideleft'" height="450" width="295">
+       
+    </canvas>
+    <canvas class="layer4" id="layer7_patch" ng-show="customizeObject.visibleCanvas == 'sideright'" height="450" width="295">
+       
+    </canvas>
 
    </div>
-   
+   <div>
+     <canvas class="layer5" custom-drag ng-show="customizeObject.visibleCanvas == 'front' || customizeObject.visibleCanvas == 'back'" id="layer8_customart" height="450" width="295">
+         
+     </canvas>
+     <canvas class="layer6" ng-show="customizeObject.visibleCanvas == 'front' || customizeObject.visibleCanvas == 'back'" id="layer9_customart" height="450" width="295">
+         
+     </canvas>
+   </div>
 </div>
+
 <!-- componentvalue="customizeObject.selectedValue" 
  -->
- <div id="bottom-panel" class=" attach-at-buttom scroll-bottom-panel">
-
-    <custom-check-box style="display: inline-flex" componenttype="{'type': customizeObject.type, 'subType' : customizeObject.subType}" componentvalue="customizeObject.selectedValue" componentcontent="customizeObject.data" call="processImage(option)">
+ <div id="bottom-panel" class="attach-at-buttom scroll-bottom-panel topLayer">
+    <div>
+    <custom-check-box style="display: table;" componenttype="{'type': customizeObject.type, 'subType' : customizeObject.subType}" componentvalue="{{customizeObject.selectedValue}}" componentcontent="customizeObject.data" call="processImage(option)">
     </custom-check-box>
-
-
+  </div>
 </div>
+
+  <!-- <div> -->
+   <!-- style="display: inline-flex" -->
+    <form  class="form-inline topLayer" style="height: 30px;">
+    <div style="bottom: 0px;position: absolute;width: 100%;overflow-x: auto;white-space: nowrap;z-index: 100;">
+      <span ng-if="customizeObject.type == 'ArtWork' && customizeObject.subType == 'Custom Image'" class="file-input btn btn-primary btn-file topLayer">
+          <input class="topLayer" type="file" fileread populate="loadCustomImage(option)">
+      </span>       
+
+      <input class="form-control topLayer" ng-if="customizeObject.type == 'ArtWork' && customizeObject.subType == 'Custom Text'" ng-model="customizeObject.text.label" placeholder="Enter Text" type="text" style="width:150px;display: -webkit-inline-flex;z-index: 100;" />
+      <!-- <label>Font Style</label> -->
+     
+      <select class="form-control setwidth topLayer" ng-if="customizeObject.type == 'ArtWork' && customizeObject.subType == 'Custom Text'" ng-model="customizeObject.text.fontStyle" ng-init="customizeObject.text.fontStyle= 'Calibri'" style="width:150px;display: -webkit-inline-flex;z-index: 100;">
+        <option value="">-- Select Font --</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Lucida Console">Lucida Console</option>
+        <option value="Impact">Impact</option>
+        <option value="Calibri">Calibri</option>
+      </select>
+    
+      <select class="form-control setwidth topLayer" ng-if="customizeObject.type == 'ArtWork' && customizeObject.subType == 'Custom Text'" ng-model="customizeObject.text.fontType" ng-init="customizeObject.text.fontType= 'Filled'" style="width:150px;display: -webkit-inline-flex;z-index: 100;">
+        <option value="">-- Select Font --</option>
+        <option value="Filled">Solid Text</option>
+        <option value="Stroke">Hollow Text</option>
+      </select>
+      
+
+      <select class="form-control setwidth topLayer" ng-if="customizeObject.type == 'ArtWork' && customizeObject.subType == 'Custom Text'" ng-model="customizeObject.text.color" ng-init="customizeObject.text.color='RED'" style="width:150px;display: -webkit-inline-flex;z-index: 100;">
+        <option value="">-- Select Color --</option>
+        <option value="RED">Red</option>
+        <option value="GREEN">Green</option>
+        <option value="BLUE">Blue</option>
+        <option value="YELLOW">Yellow</option>
+        <option value="ORANGE">Orange</option>
+      </select>
+
+      <select class="form-control setwidth topLayer" ng-if="customizeObject.type == 'ArtWork' && customizeObject.subType == 'Custom Text'" ng-model="customizeObject.text.strokeColor" ng-init="customizeObject.text.strokeColor='RED'" style="width:150px;display: -webkit-inline-flex;z-index: 100;">
+        <option value="">-- Select Color --</option>
+        <option value="RED">Red</option>
+        <option value="GREEN">Green</option>
+        <option value="BLUE">Blue</option>
+        <option value="YELLOW">Yellow</option>
+        <option value="ORANGE">Orange</option>
+        <option value="WHITE">White</option>
+      </select>
+
+      <select class="form-control topLayer setwidth" ng-if="customizeObject.type == 'ArtWork' && customizeObject.subType == 'Custom Text'" ng-model="customizeObject.text.fontSize" ng-init="customizeObject.text.fontSize='12'" style="width:150px;display: -webkit-inline-flex;z-index: 100;">
+        <option value="">-- Select Font Size --</option>
+        <option value="10">Extra Small</option>
+        <option value="12">Small</option>
+        <option value="14">Medium</option>
+        <option value="16">Large</option>
+        <option value="18">Extra Large</option>
+      </select>
+
+      <button ng-if="customizeObject.type == 'ArtWork' && customizeObject.subType == 'Custom Text'" class="btn btn-primary topLayer" ng-click='loadCustomText()' style="width:150px;display: -webkit-inline-flex;z-index: 100;">
+      Save Text</button>     
+  </div>
+ </form>

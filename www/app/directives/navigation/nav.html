@@ -2,8 +2,9 @@
     <div class="container-fluid">
     
         <span class="middle" ng-init=" navcollapsed=true" ng-click="navCollapsed = !navCollapsed"><a href=""><span class="glyphicon glyphicon-menu-hamburger middle" aria-hidden="true"></a></span>
-        
-        
+       
+        <span class="middle align-comp-right" ng-click="reset()"><a href=""><span class="middle btn btn-primary">Reset</span></a></span>
+
         <span class="middle align-comp-right"
         >Cart<a href="#"><span class="glyphicon glyphicon-shopping-cart middle" aria-hidden="true"></a></span>
 
@@ -19,7 +20,7 @@
         <div collapse="isCollapsed">
             <!-- <div class="panel-body"> -->
             <div ng-repeat="tab in subNavigation" style="background-color: white;">
-                <div class="card" ng-init="tab.showSubMenu = true">
+                <div class="card" ng-init="tab.showSubMenu = false">
                 <!-- ng-click="tab.showSubMenu = !tab.showSubMenu" -->          
                     <div ng-click="getTabData(tab);" class="card-block text-center">
                         <span class="{{tab.icon}}"></span>

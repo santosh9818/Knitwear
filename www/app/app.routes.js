@@ -17,7 +17,19 @@
         $stateProvider
         .state('main', {
             abstract: true,
-            templateUrl: 'app/templates/main-view.html'          
+            templateUrl: 'app/templates/main-view.html',
+            resolve: {
+                map: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load(
+                        {
+                            name: 'knitwearApp',
+                            files: [
+                                './app/services/sharedProperties.js'
+                            ]
+                        }
+                    );
+                }]
+            }
         })
 
         // Main view for customization
@@ -36,7 +48,9 @@
                                 './app/controllers/navigation/navigation-controller.js',
                                 './app/directives/navigation/nav-bar.js',
                                 './app/controllers/utility/customCheckbox-controller.js',
-                                './app/directives/utility/custom-checkbox.js'
+                                './app/directives/utility/file-upload.js',
+                                './app/directives/utility/custom-checkbox.js',
+                                './app/services/sharedProperties.js'
                             ]
                         }
                     );

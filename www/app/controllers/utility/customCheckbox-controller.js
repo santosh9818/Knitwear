@@ -26,14 +26,19 @@
 	 * Select value in directive
 	 */
 	$scope.$watch("ctype", function(){	
-		console.log($scope.ctype, $scope.cvalue);
-		if($scope.cvalue[$scope.ctype.type]){
-			if($scope.cvalue.subType){
-				$scope.model.isSelected = $scope.csource.indexOf($scope.cvalue[$scope.ctype.type][$scope.ctype.subType]);        
+		console.log($scope.cvalue);
+		var tempCtype = angular.fromJson($scope.cvalue);
+		console.log("Wtach", tempCtype , $scope.ctype);
+		if(tempCtype[$scope.ctype.type]){
+			if(tempCtype[$scope.ctype.type][$scope.ctype.subType]){
+				$scope.model.isSelected = $scope.csource.indexOf(tempCtype[$scope.ctype.type][$scope.ctype.subType]);        
 			}
 			else{
-				$scope.model.isSelected = $scope.csource.indexOf($scope.cvalue[$scope.ctype.type]);        
+				$scope.model.isSelected = $scope.csource.indexOf(tempCtype[$scope.ctype.type]);        
 			}			
+		}
+		else{
+			$scope.model.isSelected = -1;
 		}			
 	});
 

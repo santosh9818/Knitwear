@@ -1,6 +1,6 @@
 /* Used Css class */
 .add-border-to-card {
-	border:2px solid red;
+	border:3px solid red;
 }
 
 .add-black-border-to-card {
@@ -8,10 +8,12 @@
 }
 
 .inline {
-	/*display: inline-block;*/
+	display: table-cell;
     height: 72px !important;
 	position: relative;
-	display: inline-flex;
+	/*display: inline-flex;*/
+	/*float: left;*/
+	/*display: -webkit-inline-flex;*/
 }
 
 .card-image-ratio {
@@ -26,40 +28,47 @@
     position: absolute;
     top: 0px;	
     right: 0px;
+    width: 13px;
+    height: 13px;
 }
 
 .attach-at-buttom {
 	bottom: 0px; 
     position: absolute;   
 }
-
+/* For Image Canvas */
 .layer1 {
-	z-index: 16;
+	z-index: 30;
 	position: absolute;
 }
 
+/* Pattern Layer */
 .layer2 {
 	z-index: 15;
 	position: absolute;
 }
 
+/* Color Layer */
 .layer3 {
 	z-index: 14;
 	position: absolute;
 }
 
+/* Patch Layer */
 .layer4 {
-	z-index: 13;
+	z-index: 16;
 	position: absolute;
 }
 
+/* Custom Art Layer Image */
 .layer5 {
-	z-index: 12;
+	z-index: 31;/*17;*/
 	position: absolute;
 }
 
+/* Custom Art Layer Text*/
 .layer6 {
-	z-index: 11;
+	z-index: 31;/*18;*/
 	position: absolute;
 }
 
@@ -68,9 +77,13 @@
 }
 
 .scroll-bottom-panel {
-	width: 282px;
-	overflow-x: scroll;
-	overflow-y: hide;
+	/*width: 282px;*/
+	min-width: 295px;
+	max-width: 295px !important;
+	overflow: auto;
+	/*overflow-y: hide;*/
+	/*overflow: auto;*/
+	-webkit-overflow-scrolling: touch;
 }
 
 /* Not Confirm */
@@ -112,8 +125,21 @@
 	height: 280px;
 }
 
+.setwidth {
+	width: 200px !important;
+	display: -webkit-inline-flex !important;
+}
+
+.inlineComponent {
+	bottom: 0px; 
+    position: absolute;
+	width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
 /*.canvas-width {
 	height: 600px !important;
 	width: 295px;
 	display:inline-block;
 }*/
+
