@@ -1,0 +1,31 @@
+﻿<nav class="navbar navbar-default">
+    <div class="container-fluid">
+    
+        <span class="middle" ng-init=" navcollapsed=true" ng-click="navCollapsed = !navCollapsed"><a href=""><span class="glyphicon glyphicon-menu-hamburger middle" aria-hidden="true"></a></span>
+        
+        
+        <span class="middle align-comp-right"
+        >Cart<a href="#"><span class="glyphicon glyphicon-shopping-cart middle" aria-hidden="true"></a></span>
+
+        <span class="middle align-comp-right"
+        ><a href="#"><span class="glyphicon glyphicon-search middle" aria-hidden="true"></a></span>
+       
+    </div>
+</nav>
+
+
+<div class="col-md-4-panel" id="bs-example-navbar-collapse-4" ng-if="navCollapsed">
+    <div class="panel panel-default">
+        <div collapse="isCollapsed">
+            <div class="panel-body">
+                <div class="card" ng-click="getTabData(tab.tabbedValue, tab.name)" ng-repeat=" tab in subNavigation">          
+                    <div class="card-block text-center">
+                        <span class="{{tab.icon}}"></span>
+                        <p class="card-title">{{tab.name}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
